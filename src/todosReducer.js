@@ -8,6 +8,10 @@ const todosReducer = (todos = [], action) => {
           ...todos,
           new Todo(newTodoId, action.description)
         ]
+      case "DELETE_TODO":
+        return [
+          ...todos.filter(todo => todo.id !== action.id)
+        ]
       default:
         return todos;
     }

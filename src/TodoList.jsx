@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import TodoItem from './TodoItem'
 import Todo from './Todo'
 
-const TodoList = ({ todoItems }) => (
+const TodoList = ({ todoItems, onDeleteButtonClick }) => (
   <div>
     {todoItems.map(todoItem => (
-      <TodoItem key={todoItem.id} id={todoItem.id} description={todoItem.description} />
+      <TodoItem key={todoItem.id} id={todoItem.id} description={todoItem.description} onDeleteButtonClick={onDeleteButtonClick} />
     ))}
   </div>
 );
